@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "plastic_armor:item/plastoid_chestplate"
+  }
+}
