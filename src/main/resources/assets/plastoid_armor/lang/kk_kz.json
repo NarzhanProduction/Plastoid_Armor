@@ -1,0 +1,23 @@
+{
+  "item.plastoid_armor.plastoid": "Пластоид",
+  "item.plastoid_armor.depleted_plastoid_compound": "Таусылған Пластоидты Қорытпа",
+  "item.plastoid_armor.plastoid_compound": "Пластоидты Қорытпа",
+  "item.plastoid_armor.unfired_plastoid": "Күйген Пластоидты Қорытпа",
+
+  "item.plastoid_armor.stormtrooper_helmet": "Штурмист Дулығасы",
+  "item.plastoid_armor.stormtrooper_chestplate": "Штурмист Кеудеші",
+  "item.plastoid_armor.stormtrooper_leggings": "Штурмист Шалбары",
+  "item.plastoid_armor.stormtrooper_boots": "Штурмист Етігі",
+
+  "item.plastoid_armor.marksman_helmet": "Марксман Дулығасы",
+  "item.plastoid_armor.marksman_chestplate": "Марксман Кеудеші",
+  "item.plastoid_armor.marksman_leggings": "Марксман Шалбары",
+  "item.plastoid_armor.marksman_boots": "Марксман Етігі",
+
+  "item.plastoid_armor.tank_helmet": "Танк Дулығасы",
+  "item.plastoid_armor.tank_chestplate": "Танк Кеудеші",
+  "item.plastoid_armor.tank_leggings": "Танк Шалбары",
+  "item.plastoid_armor.tank_boots": "Танк Етігі",
+
+  "creativetab.plastoid_armor_tab": "Пластоид Саут"
+}

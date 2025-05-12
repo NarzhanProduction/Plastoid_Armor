@@ -1,92 +1,92 @@
 package net.narzhanp.plasticarmor.item;
 
-import net.minecraft.Util;
-import net.minecraft.client.renderer.texture.atlas.sources.LazyLoadedImage;
+import net.narzhanp.plasticarmor.PlastoidArmor;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ArmorMaterials;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
-import net.narzhanp.plasticarmor.PlasticArmor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.EnumMap;
 import java.util.function.Supplier;
 
-
 public enum ModArmorMaterials implements ArmorMaterial {
-    PLASTOID("plastoid", 37, (EnumMap)Util.make(new EnumMap(ArmorItem.Type.class), (p_266655_) -> {
-        p_266655_.put(ArmorItem.Type.BOOTS, 3);
-        p_266655_.put(ArmorItem.Type.LEGGINGS, 6);
-        p_266655_.put(ArmorItem.Type.CHESTPLATE, 8);
-        p_266655_.put(ArmorItem.Type.HELMET, 3);
-    }), 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.of(new ItemLike[]{Items.NETHERITE_INGOT}));
-
-    public static final StringRepresentable.EnumCodec<ArmorMaterials> CODEC = StringRepresentable.fromEnum(ArmorMaterials::values);
-    private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = (EnumMap)Util.make(new EnumMap(ArmorItem.Type.class), (p_266653_) -> {
-        p_266653_.put(ArmorItem.Type.BOOTS, 13);
-        p_266653_.put(ArmorItem.Type.LEGGINGS, 15);
-        p_266653_.put(ArmorItem.Type.CHESTPLATE, 16);
-        p_266653_.put(ArmorItem.Type.HELMET, 11);
+    STORMTROOPER("stormtrooper", 33, new int[]{3, 8, 6, 3}, 10,
+            SoundEvents.ARMOR_EQUIP_DIAMOND, 1f, 0.1f, () -> {
+        System.out.println("Creating Ingredient for PLASTOID in " + System.currentTimeMillis());
+        return Ingredient.of(ModItems.PLASTOID.get());
+    }),
+    MARKSMAN("marksman", 42, new int[]{3, 8, 6, 3}, 13,
+    SoundEvents.ARMOR_EQUIP_DIAMOND, 2f, 0.2f, () -> {
+        System.out.println("Creating Ingredient for MARKSMAN in " + System.currentTimeMillis());
+        return Ingredient.of(ModItems.PLASTOID.get());
+    }),
+    TANK("tank", 75, new int[]{6, 12, 8, 5}, 16,
+            SoundEvents.ARMOR_EQUIP_DIAMOND, 3f, 0.3f, () -> {
+        System.out.println("Creating Ingredient for TANK in " + System.currentTimeMillis());
+        return Ingredient.of(ModItems.PLASTOID.get());
     });
+
     private final String name;
     private final int durabilityMultiplier;
-    private final EnumMap<ArmorItem.Type, Integer> protectionFunctionForType;
+    private final int[] protectionAmounts;
     private final int enchantmentValue;
-    private final SoundEvent sound;
+    private final SoundEvent equipSound;
     private final float toughness;
     private final float knockbackResistance;
-    private final LazyLoadedValue<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
-    private ModArmorMaterials(String pName, int pDurabilityMultiplier, EnumMap<ArmorItem.Type, Integer> pProtectionFunctionForType, int pEnchantmentValue, SoundEvent pSound, float pToughness, float pKnockbackResistance, Supplier<Ingredient> pRepairIngredient) {
-        this.name = pName;
-        this.durabilityMultiplier = pDurabilityMultiplier;
-        this.protectionFunctionForType = pProtectionFunctionForType;
-        this.enchantmentValue = pEnchantmentValue;
-        this.sound = pSound;
-        this.toughness = pToughness;
-        this.knockbackResistance = pKnockbackResistance;
-        this.repairIngredient = new LazyLoadedValue(pRepairIngredient);
+    private static final int[] BASE_DURABILITY = {11, 16, 16, 13};
+
+    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound,
+                      float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+        this.name = name;
+        this.durabilityMultiplier = durabilityMultiplier;
+        this.protectionAmounts = protectionAmounts;
+        this.enchantmentValue = enchantmentValue;
+        this.equipSound = equipSound;
+        this.toughness = toughness;
+        this.knockbackResistance = knockbackResistance;
+        this.repairIngredient = repairIngredient;
     }
 
-    public int getDurabilityForType(ArmorItem.Type pType) {
-        return (Integer)HEALTH_FUNCTION_FOR_TYPE.get(pType) * this.durabilityMultiplier;
+    @Override
+    public int getDurabilityForType(ArmorItem.Type type) {
+        return BASE_DURABILITY[type.ordinal()] * this.durabilityMultiplier;
     }
 
-    public int getDefenseForType(ArmorItem.Type pType) {
-        return (Integer)this.protectionFunctionForType.get(pType);
+    @Override
+    public int getDefenseForType(ArmorItem.Type type) {
+        return this.protectionAmounts[type.ordinal()];
     }
 
+    @Override
     public int getEnchantmentValue() {
-        return this.enchantmentValue;
+        return enchantmentValue;
     }
 
-    public SoundEvent getEquipSound() {
-        return this.sound;
+    @Override
+    public @NotNull SoundEvent getEquipSound() {
+        return this.equipSound;
     }
 
-    public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient.get();
+    @Override
+    public @NotNull Ingredient getRepairIngredient() {
+        return this.repairIngredient.get();
     }
 
-    public String getName() {
-        return this.name;
+    @Override
+    public @NotNull String getName() {
+        return PlastoidArmor.MOD_ID + ":" + this.name;
     }
 
+    @Override
     public float getToughness() {
         return this.toughness;
     }
 
+    @Override
     public float getKnockbackResistance() {
         return this.knockbackResistance;
-    }
-
-    public String getSerializedName() {
-        return this.name;
     }
 }

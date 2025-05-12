@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "plastoid_armor:plastoid_compound"
+    },
+    {
+      "item": "mekanism:dust_coal"
+    }
+  ],
+  "result": {
+    "item": "plastoid_armor:unfired_plastoid",
+    "count": 1
+  }
+}

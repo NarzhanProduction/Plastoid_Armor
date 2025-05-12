@@ -1,0 +1,13 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "ingredient": {
+      "item": "plastoid_armor:depleted_plastoid_compound",
+      "count": 1
+    }
+  },
+  "output": {
+    "item": "plastoid_armor:plastoid_compound",
+    "count": 1
+  }
+}

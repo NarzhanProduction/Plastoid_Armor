@@ -1,0 +1,23 @@
+{
+  "item.plastoid_armor.plastoid": "Plastoid",
+  "item.plastoid_armor.depleted_plastoid_compound": "Depleted Plastoid Compound",
+  "item.plastoid_armor.plastoid_compound": "Plastoid Compound",
+  "item.plastoid_armor.unfired_plastoid": "Unfired Plastoid Compound",
+
+  "item.plastoid_armor.stormtrooper_helmet": "Stormtrooper Helmet",
+  "item.plastoid_armor.stormtrooper_chestplate": "Stormtrooper Chestplate",
+  "item.plastoid_armor.stormtrooper_leggings": "Stormtrooper Leggings",
+  "item.plastoid_armor.stormtrooper_boots": "Stormtrooper Boots",
+
+  "item.plastoid_armor.marksman_helmet": "Marksman Helmet",
+  "item.plastoid_armor.marksman_chestplate": "Marksman Chestplate",
+  "item.plastoid_armor.marksman_leggings": "Marksman Leggings",
+  "item.plastoid_armor.marksman_boots": "Marksman Boots",
+
+  "item.plastoid_armor.tank_helmet": "Tank Helmet",
+  "item.plastoid_armor.tank_chestplate": "Tank Chestplate",
+  "item.plastoid_armor.tank_leggings": "Tank Leggings",
+  "item.plastoid_armor.tank_boots": "Tank Boots",
+
+  "creativetab.plastoid_armor_tab": "Plastoid Armor"
+}

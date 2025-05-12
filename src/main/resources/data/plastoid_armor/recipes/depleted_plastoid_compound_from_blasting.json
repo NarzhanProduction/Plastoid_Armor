@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "mekanism:hdpe_sheet"
+  },
+  "result": "plastoid_armor:depleted_plastoid_compound",
+  "experience": 0.1,
+  "cookingtime": 100
+}

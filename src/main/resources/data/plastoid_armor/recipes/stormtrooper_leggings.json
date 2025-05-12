@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IWI",
+    "PCP",
+    "P P"
+  ],
+  "key": {
+    "P": {
+      "item": "plastoid_armor:plastoid"
+    },
+    "C": {
+      "item": "mekanism:advanced_control_circuit"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "plastoid_armor:stormtrooper_leggings",
+    "count": 1
+  }
+}

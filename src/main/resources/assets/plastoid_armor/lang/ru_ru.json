@@ -1,0 +1,23 @@
+{
+  "item.plastoid_armor.plastoid": "Пластоид",
+  "item.plastoid_armor.depleted_plastoid_compound": "Обеднённый Пластоидный Сплав",
+  "item.plastoid_armor.plastoid_compound": "Пластоидный Сплав",
+  "item.plastoid_armor.unfired_plastoid": "Обожённый Пластоидный Сплав",
+
+  "item.plastoid_armor.stormtrooper_helmet": "Шлем Штурмовика",
+  "item.plastoid_armor.stormtrooper_chestplate": "Нагрудник Штурмовика",
+  "item.plastoid_armor.stormtrooper_leggings": "Поножи Штурмовика",
+  "item.plastoid_armor.stormtrooper_boots": "Ботинки Штурмовика",
+
+  "item.plastoid_armor.marksman_helmet": "Шлем Марксмана",
+  "item.plastoid_armor.marksman_chestplate": "Нагрудник Марксмана",
+  "item.plastoid_armor.marksman_leggings": "Поножи Марксмана",
+  "item.plastoid_armor.marksman_boots": "Ботинки Марксмана",
+
+  "item.plastoid_armor.tank_helmet": "Шлем Танка",
+  "item.plastoid_armor.tank_chestplate": "Нагрудник Танка",
+  "item.plastoid_armor.tank_leggings": "Поножи Танка",
+  "item.plastoid_armor.tank_boots": "Ботинки Танка",
+
+  "creativetab.plastoid_armor_tab": "Пластоидная Броня"
+}

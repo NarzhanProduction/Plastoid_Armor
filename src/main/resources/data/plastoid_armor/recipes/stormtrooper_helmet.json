@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PCP",
+    "PGP",
+    " D "
+  ],
+  "key": {
+    "P": {
+      "item": "plastoid_armor:plastoid"
+    },
+    "C": {
+      "item": "mekanism:advanced_control_circuit"
+    },
+    "D": {
+      "item": "mekanism:dust_coal"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "plastoid_armor:stormtrooper_helmet",
+    "count": 1
+  }
+}
