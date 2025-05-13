@@ -36,6 +36,12 @@ public class ArmorRenderEventHandler {
             model.rightArm.visible = !hideArms;
             model.leftLeg.visible = !hideLegs;
             model.rightLeg.visible = !hideLegs;
+
+            model.leftSleeve.visible = !hideArms;
+            model.rightSleeve.visible = !hideArms;
+            model.leftPants.visible = !hideLegs;
+            model.rightPants.visible = !hideLegs;
+            model.jacket.visible = !hideBody;
         }
     }
 
