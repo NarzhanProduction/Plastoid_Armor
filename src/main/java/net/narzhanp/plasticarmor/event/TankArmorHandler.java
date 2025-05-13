@@ -1,6 +1,13 @@
 package net.narzhanp.plasticarmor.event;
 
+import net.minecraft.client.model.PlayerModel;
+import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,6 +16,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -86,10 +94,14 @@ public class TankArmorHandler {
     public static void onLivingHurt(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player && isFullTankSet(player)) {
             DamageSource source = event.getSource();
-            // Reducing warium bullets damage up to 40%
-            if (source.getMsgId().equals("crusty_chunks:armor_bypass_damage")) {
+
+            ResourceKey<DamageType> armorBypassDamage = ResourceKey.create(
+                    Registries.DAMAGE_TYPE,
+                    new ResourceLocation("crusty_chunks:armor_bypass_damage")
+            );
+            if (source.is(armorBypassDamage)) {
                 float originalDamage = event.getAmount();
-                float reducedDamage = originalDamage * 0.6F; // Reducing 40%
+                float reducedDamage = originalDamage * 0.6F; // Reducing by 40%
                 event.setAmount(reducedDamage);
             }
         }
@@ -128,6 +140,33 @@ public class TankArmorHandler {
                 }
             }
 
+        }
+    }
+
+    @SubscribeEvent
+    public static void onRenderPlayer(RenderPlayerEvent.Pre event) {
+        if (event.getEntity() instanceof AbstractClientPlayer player) {
+            // Получаем модель игрока
+            PlayerModel<?> model = event.getRenderer().getModel();
+
+            // Проверяем каждую часть брони
+            ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
+            ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
+            ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
+            ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
+
+            // Скрываем голову, если надет шлем
+            model.head.visible = !(helmet.getItem() == ModItems.TANK_HELMET.get());
+            model.hat.visible = !(helmet.getItem() == ModItems.TANK_HELMET.get());
+
+            // Скрываем туловище и руки, если надет нагрудник
+            model.body.visible = !(chestplate.getItem() == ModItems.TANK_CHESTPLATE.get());
+            model.leftArm.visible = !(chestplate.getItem() == ModItems.TANK_CHESTPLATE.get());
+            model.rightArm.visible = !(chestplate.getItem() == ModItems.TANK_CHESTPLATE.get());
+
+            // Скрываем ноги, если надеты поножи или ботинки
+            model.leftLeg.visible = !(leggings.getItem() == ModItems.TANK_LEGGINGS.get());
+            model.rightLeg.visible = !(leggings.getItem() == ModItems.TANK_LEGGINGS.get());
         }
     }
 }
