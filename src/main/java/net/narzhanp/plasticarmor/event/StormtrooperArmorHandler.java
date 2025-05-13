@@ -2,7 +2,11 @@ package net.narzhanp.plasticarmor.event;
 
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -90,10 +94,14 @@ public class StormtrooperArmorHandler {
     public static void onLivingHurt(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player && isFullStormtrooperSet(player)) {
             DamageSource source = event.getSource();
-            // Reducing warium bullets damage up to 35%
-            if (source.getMsgId().equals("crusty_chunks:armor_bypass_damage")) {
+
+            ResourceKey<DamageType> armorBypassDamage = ResourceKey.create(
+                    Registries.DAMAGE_TYPE,
+                    new ResourceLocation("crusty_chunks:armor_bypass_damage")
+            );
+            if (source.is(armorBypassDamage)) {
                 float originalDamage = event.getAmount();
-                float reducedDamage = originalDamage * 0.65F; // Reducing 35%
+                float reducedDamage = originalDamage * 0.6F; // Reducing by 40%
                 event.setAmount(reducedDamage);
             }
         }
