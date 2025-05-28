@@ -2,22 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " C ",
-    "PIP",
+    "PBP",
     "P P"
   ],
   "key": {
     "P": {
       "item": "plastoid_armor:plastoid"
     },
-    "I": {
-      "item": "minecraft:iron_ingot"
+    "B": {
+      "item": "mekanism:ingot_refined_obsidian"
     },
     "C": {
-      "item": "mekanism:advanced_control_circuit"
+      "item": "mekanism:elite_control_circuit"
     }
   },
   "result": {
-    "item": "plastoid_armor:stormtrooper_boots",
+    "item": "plastoid_armor:tank_boots",
     "count": 1
   }
 }

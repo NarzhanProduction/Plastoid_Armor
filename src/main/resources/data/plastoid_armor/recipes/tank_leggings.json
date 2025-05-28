@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "PCP",
+    "P P"
+  ],
+  "key": {
+    "P": {
+      "item": "plastoid_armor:plastoid"
+    },
+    "C": {
+      "item": "mekanism:elite_control_circuit"
+    },
+    "B": {
+      "item": "mekanism:block_refined_obsidian"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "result": {
+    "item": "plastoid_armor:tank_leggings",
+    "count": 1
+  }
+}

@@ -36,6 +36,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.TANK_CHESTPLATE.get());
                         pOutput.accept(ModItems.TANK_LEGGINGS.get());
                         pOutput.accept(ModItems.TANK_BOOTS.get());
+
+                        pOutput.accept(ModItems.JETPACK.get());
                     })
                     .build());
 

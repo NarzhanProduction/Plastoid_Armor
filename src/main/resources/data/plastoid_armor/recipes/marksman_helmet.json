@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PCP",
+    "PGP",
+    " D "
+  ],
+  "key": {
+    "P": {
+      "item": "plastoid_armor:plastoid"
+    },
+    "C": {
+      "item": "mekanism:elite_control_circuit",
+      "count": 2
+    },
+    "D": {
+      "item": "mekanism:hdpe_sheet"
+    },
+    "G": {
+      "item": "mekanism:structural_glass"
+    }
+  },
+  "result": {
+    "item": "plastoid_armor:marksman_helmet",
+    "count": 1
+  }
+}

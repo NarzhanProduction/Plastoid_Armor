@@ -142,31 +142,4 @@ public class TankArmorHandler {
 
         }
     }
-
-    @SubscribeEvent
-    public static void onRenderPlayer(RenderPlayerEvent.Pre event) {
-        if (event.getEntity() instanceof AbstractClientPlayer player) {
-            // Получаем модель игрока
-            PlayerModel<?> model = event.getRenderer().getModel();
-
-            // Проверяем каждую часть брони
-            ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
-            ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
-            ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
-            ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
-
-            // Скрываем голову, если надет шлем
-            model.head.visible = !(helmet.getItem() == ModItems.TANK_HELMET.get());
-            model.hat.visible = !(helmet.getItem() == ModItems.TANK_HELMET.get());
-
-            // Скрываем туловище и руки, если надет нагрудник
-            model.body.visible = !(chestplate.getItem() == ModItems.TANK_CHESTPLATE.get());
-            model.leftArm.visible = !(chestplate.getItem() == ModItems.TANK_CHESTPLATE.get());
-            model.rightArm.visible = !(chestplate.getItem() == ModItems.TANK_CHESTPLATE.get());
-
-            // Скрываем ноги, если надеты поножи или ботинки
-            model.leftLeg.visible = !(leggings.getItem() == ModItems.TANK_LEGGINGS.get());
-            model.rightLeg.visible = !(leggings.getItem() == ModItems.TANK_LEGGINGS.get());
-        }
-    }
 }

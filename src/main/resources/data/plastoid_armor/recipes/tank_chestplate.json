@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PBP",
+    "PCP",
+    "IPI"
+  ],
+  "key": {
+    "P": {
+      "item": "plastoid_armor:plastoid"
+    },
+    "B": {
+      "item": "mekanism:block_refined_obsidian"
+    },
+    "C": {
+      "item": "mekanism:elite_control_circuit"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "result": {
+    "item": "plastoid_armor:tank_chestplate",
+    "count": 1
+  }
+}

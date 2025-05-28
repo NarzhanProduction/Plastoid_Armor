@@ -7,9 +7,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.narzhanp.plasticarmor.PlastoidArmor;
+import net.narzhanp.plasticarmor.item.custom.JetpackItem;
 import net.narzhanp.plasticarmor.item.custom.MarksmanArmorItem;
 import net.narzhanp.plasticarmor.item.custom.StormtrooperArmorItem;
 import net.narzhanp.plasticarmor.item.custom.TankArmorItem;
+import top.theillusivec4.curios.api.CuriosApi;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -53,6 +55,9 @@ public class ModItems {
             () -> new TankArmorItem(ModArmorMaterials.TANK, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> TANK_BOOTS = ITEMS.register("tank_boots",
             () -> new TankArmorItem(ModArmorMaterials.TANK, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> JETPACK = ITEMS.register("jetpack",
+            () -> new JetpackItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         System.out.println("Registering items for plastoid_armor");

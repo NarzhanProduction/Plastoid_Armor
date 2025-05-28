@@ -12,10 +12,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.narzhanp.plasticarmor.PlastoidArmor;
 import net.narzhanp.plasticarmor.item.ModItems;
 
-@Mod.EventBusSubscriber(modid = PlastoidArmor.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = PlastoidArmor.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ArmorRenderEventHandler {
     @SubscribeEvent(priority = EventPriority.NORMAL)
-    public static void onRenderPlayerPre(RenderPlayerEvent event) {
+    public static void onRenderPlayerPre(RenderPlayerEvent.Pre event) {
         if (event.getEntity() instanceof AbstractClientPlayer player) {
 
             PlayerModel<?> model = event.getRenderer().getModel();

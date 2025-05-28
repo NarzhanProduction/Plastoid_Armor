@@ -1,23 +1,27 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " C ",
-    "PIP",
+    "IWI",
+    "PCP",
     "P P"
   ],
   "key": {
     "P": {
       "item": "plastoid_armor:plastoid"
     },
+    "C": {
+      "item": "mekanism:elite_control_circuit",
+      "count": 2
+    },
+    "W": {
+      "item": "mekanism:hdpe_wool"
+    },
     "I": {
       "item": "minecraft:iron_ingot"
-    },
-    "C": {
-      "item": "mekanism:advanced_control_circuit"
     }
   },
   "result": {
-    "item": "plastoid_armor:stormtrooper_boots",
+    "item": "plastoid_armor:marksman_leggings",
     "count": 1
   }
 }

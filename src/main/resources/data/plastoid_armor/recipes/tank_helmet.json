@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PCP",
+    "PGP",
+    " D "
+  ],
+  "key": {
+    "P": {
+      "item": "plastoid_armor:plastoid"
+    },
+    "B": {
+      "item": "mekanism:ingot_refined_obsidian"
+    },
+    "C": {
+      "item": "mekanism:elite_control_circuit"
+    },
+    "D": {
+      "item": "mekanism:quartz_coal"
+    },
+    "G": {
+      "item": "mekanismgenerators:reactor_glass"
+    }
+  },
+  "result": {
+    "item": "plastoid_armor:tank_helmet",
+    "count": 1
+  }
+}

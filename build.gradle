@@ -75,7 +75,7 @@ minecraft {
             // You can set various levels here.
             // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
-            args '--username', 'Dev'
+//            args '--username', 'Dev'
 
             mods {
                 "${mod_id}" {
@@ -114,6 +114,10 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
+    }
     exclusiveContent {
         forRepository {
             maven {
@@ -145,7 +149,7 @@ dependencies {
     implementation("com.eliotlash.mclib:mclib:20")
 
 
-// Mekanism API и основной модуль для компиляции
+    // Mekanism API и основной модуль для компиляции
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:api")
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}")
 
@@ -153,6 +157,11 @@ dependencies {
     runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:additions")
     runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")
     runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")
+
+    // Compile against only the API artifact
+    compileOnly(fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api"))
+    // Use the full Curios API jar at runtime
+    runtimeOnly(fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}"))
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

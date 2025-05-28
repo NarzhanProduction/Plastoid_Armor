@@ -1,23 +1,27 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " C ",
-    "PIP",
-    "P P"
+    "PWP",
+    "PCP",
+    "IPI"
   ],
   "key": {
     "P": {
       "item": "plastoid_armor:plastoid"
     },
+    "C": {
+      "item": "mekanism:elite_control_circuit",
+      "count": 2
+    },
+    "W": {
+      "item": "mekanism:hdpe_sheet"
+    },
     "I": {
       "item": "minecraft:iron_ingot"
-    },
-    "C": {
-      "item": "mekanism:advanced_control_circuit"
     }
   },
   "result": {
-    "item": "plastoid_armor:stormtrooper_boots",
+    "item": "plastoid_armor:marksman_chestplate",
     "count": 1
   }
 }

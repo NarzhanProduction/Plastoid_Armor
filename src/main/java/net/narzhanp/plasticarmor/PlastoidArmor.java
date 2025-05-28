@@ -1,6 +1,7 @@
 package net.narzhanp.plasticarmor;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -14,8 +15,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.narzhanp.plasticarmor.item.ModCreativeModTabs;
 import net.narzhanp.plasticarmor.item.ModItems;
+import net.narzhanp.plasticarmor.item.client.jetpack.JetpackCuriosRenderer;
+import net.narzhanp.plasticarmor.item.custom.JetpackItem;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 @Mod(PlastoidArmor.MOD_ID)
 public class PlastoidArmor {
